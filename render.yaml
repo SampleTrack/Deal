@@ -1,0 +1,39 @@
+services:
+  - type: worker
+    name: deal-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_API_ID
+        sync: false
+      - key: TELEGRAM_API_HASH
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: CHANNEL_MAIN
+        sync: false
+      - key: CHANNEL_ELECTRONICS
+        sync: false
+      - key: CHANNEL_FASHION
+        sync: false
+      - key: CHANNEL_SKINCARE
+        sync: false
+      - key: CHANNEL_HOME
+        sync: false
+      - key: AMAZON_ACCESS_KEY
+        sync: false
+      - key: AMAZON_SECRET_KEY
+        sync: false
+      - key: AMAZON_AFFILIATE_TAG
+        sync: false
+      - key: FLIPKART_AFFILIATE_ID
+        sync: false
+      - key: FLIPKART_AFFILIATE_TOKEN
+        sync: false
+      - key: NYKAA_AFFILIATE_ID
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        sync: false
