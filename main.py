@@ -1,10 +1,12 @@
-"""
-Deal Bot - Main Entry Point
-Starts the Pyrogram bot and scheduler
-"""
-
 import asyncio
 import logging
+
+# Hack to fix Pyrogram's broken import logic on Python 3.10+
+try:
+    asyncio.get_event_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
+
 from pyrogram import Client
 from scheduler import start_scheduler
 from config import Config
